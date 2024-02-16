@@ -73,7 +73,7 @@ export function ContactForm() {
           Contact
         </div>
         <h1 className="mt-16 w-full text-5xl font-light text-emerald-400 leading-[60px] max-md:mt-10 max-md:max-w-full max-md:text-3xl max-md:leading-[56px]">
-          Let's Work <span className="text-emerald-400">Together!</span>
+          Let&apos;s Work <span className="text-emerald-400">Together!</span>
         </h1>
         <div className="mt-10 w-full text-2xl font-light leading-7 text-white max-md:mt-10 max-md:max-w-full">
           hello@amish.com

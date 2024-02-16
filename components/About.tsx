@@ -18,7 +18,7 @@ export function About() {
         <div className="flex gap-5 justify-between items-start mt-16 max-md:flex-wrap max-md:mt-10 max-md:max-w-full">
           <div className="flex flex-col self-start max-md:max-w-full">
             <div className="text-4xl font-sans font-light tracking-[-0.2px]  text-white leading-[60px] max-md:max-w-full max-md:text-4xl max-md:leading-[51px]">
-              Let's co-create captivating digital experiences,
+              Let &apos; s co-create captivating digital experiences,
               <br /> tailored to your
               <span className="text-emerald-400"> unique narrative.</span>
             </div>
@@ -30,10 +30,10 @@ export function About() {
               developer, I embody a comprehensive approach, capable of
               overseeing projects from inception to deployment, managing every
               aspect of the development journey. <br />
-              Whether you're an aspiring entrepreneur venturing into app
+              Whether you are an aspiring entrepreneur venturing into app
               development or a seasoned enterprise with an established tech
-              team, I'm eager to contribute and bring your innovative ideas to
-              fruition.
+              team, I &apos; m eager to contribute and bring your innovative
+              ideas to fruition.
             </p>
           </div>
         </div>
