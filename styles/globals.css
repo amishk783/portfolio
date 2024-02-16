@@ -17,17 +17,79 @@
 }
 
 body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
+  color: #ffffff;
+  background: #0e1630;
 }
 
 @layer utilities {
   .text-balance {
     text-wrap: balance;
+  }
+}
+@layer components {
+  .custom-container {
+    max-width: 1130px;
+    padding: 0 15px;
+    margin: auto;
+  }
+  .text {
+    font-weight: 600;
+    letter-spacing: 11px;
+    text-transform: uppercase;
+    font-family: "Kanit", sans-serif; /* Use 'Kanit' font and fallback to sans-serif */
+    font-size: 13px;
+    fill: #fff4f4;
+    /* text-shadow: 2px 0px #ccc; */
+  }
+
+  .timeline::before{
+    content: '';
+    position:absolute;
+    width: 12px;
+    border-radius: 50%;
+    height: 12px;
+    background-color: antiquewhite;
+    left: -6px;
+    top:7px;
+    transition: 0.3ms;
+
+  }
+  .timeline::after{
+    content: '';
+    background-color: #333333;
+    width: 1px;
+    height: 100%;
+    position: absolute;
+    left:0;
+    top: 10px;
+    z-index:-1;
+  }
+
+  #rotatingText {
+    animation-name: rotate-circle;
+    animation-duration: 10s;
+    animation-direction: reverse;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+  }
+  #bgSidebar {
+    animation: glowing 20s linear infinite;
+  }
+  @keyframes bg-sidebar {
+    0% {
+      background-position: 0 0;
+    }
+    50% {
+      background-position: 100% 0;
+    }
+    100% {
+      background-position: 0 0;
+    }
+  }
+
+  @keyframes rotate-circle {
+    to {
+      transform: rotate(1turn);
+    }
   }
 }
