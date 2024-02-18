@@ -91,7 +91,7 @@ export function Navbar({
         <span>
           <CiMail
             className={` ${
-              activeSection === "contact" ? "  text-green-400  " : ""
+              activeSection === "contact" ? "  text-green-400   " : " "
             } `}
             size={32}
             onClick={() => toScroll("contact")}

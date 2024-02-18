@@ -1,4 +1,10 @@
-export function SpinningText({ text }: { text: string }) {
+export function SpinningText({
+  text,
+  onClick,
+}: {
+  text: string;
+  onClick: () => void;
+}) {
   return (
     <svg
       className=""
@@ -6,6 +12,7 @@ export function SpinningText({ text }: { text: string }) {
       viewBox="0 0 200 200"
       width="200"
       height="200"
+      onClick={onClick}
     >
       <defs>
         <path

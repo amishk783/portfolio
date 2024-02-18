@@ -42,27 +42,26 @@ body {
     /* text-shadow: 2px 0px #ccc; */
   }
 
-  .timeline::before{
-    content: '';
-    position:absolute;
+  .timeline::before {
+    content: "";
+    position: absolute;
     width: 12px;
     border-radius: 50%;
     height: 12px;
     background-color: antiquewhite;
     left: -6px;
-    top:7px;
+    top: 7px;
     transition: 0.3ms;
-
   }
-  .timeline::after{
-    content: '';
+  .timeline::after {
+    content: "";
     background-color: #333333;
     width: 1px;
     height: 100%;
     position: absolute;
-    left:0;
+    left: 0;
     top: 10px;
-    z-index:-1;
+    z-index: -1;
   }
 
   #rotatingText {
@@ -72,20 +71,7 @@ body {
     animation-timing-function: linear;
     animation-iteration-count: infinite;
   }
-  #bgSidebar {
-    animation: glowing 20s linear infinite;
-  }
-  @keyframes bg-sidebar {
-    0% {
-      background-position: 0 0;
-    }
-    50% {
-      background-position: 100% 0;
-    }
-    100% {
-      background-position: 0 0;
-    }
-  }
+ 
 
   @keyframes rotate-circle {
     to {

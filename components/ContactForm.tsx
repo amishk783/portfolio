@@ -1,28 +1,28 @@
-import { useState } from "react";
 import { useForm } from "react-hook-form";
 import * as yup from "yup";
 import { yupResolver } from "@hookform/resolvers/yup";
 import { Inter } from "next/font/google";
 import clsx from "clsx";
+import { motion } from "framer-motion";
 import Image from "next/image";
 const interFont = Inter({ subsets: ["latin"] });
 
 type formData = {
   name: string;
-  phoneNo: number;
+  phoneNo?: string;
   email: string;
   subject: string;
   message: string;
-  budget: number;
+  budget?: string;
 };
 
 const validationSchema = yup.object({
   name: yup.string().required("Full name is required."),
-  phoneNo: yup.number().required("Phone number name is required."),
+  phoneNo: yup.string().optional(),
   email: yup.string().email().required("Email is required."),
   subject: yup.string().required("subject name is required."),
   message: yup.string().required("Message is required"),
-  budget: yup.number().required("Number is required."),
+  budget: yup.string().optional(),
 });
 
 export function ContactForm() {
@@ -59,10 +59,11 @@ export function ContactForm() {
   };
 
   return (
-    <section id="contact" className="pt-24 xl:pt-10 xl:mt-20">
-      <form
-        onSubmit={handleSubmit(onSubmitHandler)}
-        className="flex flex-col xl:px-5 xl:max-w-[546px]"
+    <section id="contact" className="pt-24 xl:pt-10 xl:mt-20 mb-20">
+      <motion.div
+        initial={{ opacity: 0, y: 100 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{ duration: 2, ease: "easeOut" }}
       >
         <div
           className={clsx(
@@ -76,8 +77,15 @@ export function ContactForm() {
           Let&apos;s Work <span className="text-emerald-400">Together!</span>
         </h1>
         <div className="mt-10 w-full text-2xl font-light leading-7 text-white max-md:mt-10 max-md:max-w-full">
-          hello@amish.com
+          <a href="mailto:amishkumar@gmail.com" target="_blank">
+            amishkumar@gmail.com
+          </a>
         </div>
+      </motion.div>
+      <form
+        onSubmit={handleSubmit(onSubmitHandler)}
+        className="flex flex-col xl:px-5 xl:max-w-[546px]"
+      >
         <div className="mt-16 w-[92%] xl:w-full max-md:mt-5 max-md:max-w-full">
           <div className="flex gap-5 max-md:flex-col max-md:gap-0 max-md:">
             <div className="flex flex-col w-[70%] max-md:ml-0 max-md:w-full">
@@ -89,7 +97,7 @@ export function ContactForm() {
                   <div className="flex-auto text-red-500">*</div>
                 </div>
                 <input
-                  className="mt-4 text-lg text-neutral-500 border-b-white border-b-2 pb-2 bg-transparent outline-none"
+                  className="mt-4 text-lg text-neutral-500 border-b-white border-b-2 pb-2 bg-transparent outline-none "
                   placeholder="Your Full Name"
                   {...register("name", { required: true })}
                 />
@@ -176,11 +184,12 @@ export function ContactForm() {
         {errors.message && (
           <p className="text-red-500 text-base ">{errors.message.message}</p>
         )}
-        <input
+        {/* <input
           type="file"
           className="self-start mt-12 text-xs leading-5 text-white uppercase whitespace-nowrap max-md:mt-10 max-md:ml-2 bg-transparent border-2 px-5 py-3 rounded-[20px]"
           placeholder="add an attachment"
-        />
+          {...register("image")}
+        /> */}
 
         <button className="justify-center self-start px-16 py-5 mt-11 text-base leading-7 text-center text-black uppercase whitespace-nowrap bg-emerald-400 border-2 border-emerald-400 border-solid rounded-[30px] max-md:px-5 max-md:mt-10">
           send message

@@ -1,11 +1,15 @@
-import { Fragment } from "react";
+import { motion } from "framer-motion";
 import { Inter } from "next/font/google";
 import clsx from "clsx";
+import { useState } from "react";
 import { ArrowDownCircle, Contact } from "lucide-react";
 import { SpinningText } from "./UI/SpiningText";
+import { Opacity } from "@mui/icons-material";
 const interFont = Inter({ subsets: ["latin"] });
 
 export function Hero() {
+  
+  
   const handleClickScroll = (section: string) => {
     const element = document.getElementById(section);
     if (element) {
@@ -14,8 +18,13 @@ export function Hero() {
   };
 
   return (
-    <section id="hero" className="xl:mb-40 pt-24  xl:pt-20">
-      <div className="">
+    <section id="hero" className="xl:mb-36 pt-24  xl:pt-20">
+      <motion.div
+        initial={{ opacity: 0, y: 50 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 1 }}
+        className=""
+      >
         <div
           className={clsx(
             "max-w-[135px]  px-7 py-3.5 text-sm font-light leading-4  text-white uppercase whitespace-nowrap border border-solid border-neutral-600 rounded-[30px] max-md:px-5",
@@ -33,7 +42,7 @@ export function Hero() {
               <span> Developer</span>
               <br />
               <span className="text-3xl xl:whitespace-nowrap">
-                Turning Ideas into Pixels: : Your
+                Turning Ideas into Pixels : Your
                 <span className="text-emerald-400 animate-typing">
                   {" "}
                   Expert{" "}
@@ -47,7 +56,8 @@ export function Hero() {
               burgeoning enterprises with finesse.
             </p>
             <div className="flex flex-col-reverse xl:flex xl:justify-between ">
-              <div className="gap-12 mt-10 xl:mt-2 flex items-center">
+             
+              {/* <div className="gap-12 mt-10 xl:mt-2 flex items-center">
                 <div className="">
                   <h2 className=" text-6xl text-green-400 leading-10 mb-7">
                     10+
@@ -60,22 +70,29 @@ export function Hero() {
                   </h2>
                   <p className=" text-base uppercase">Years of Experience</p>
                 </div>
-              </div>
+              </div> */}
               <div className="py-10 xl:py-2">
-                <a className="flex justify-center xl:justify-end">
-                  <SpinningText text={"Code - Create - Conquer -"} />
+                <motion.a
+                  whileHover={{ scale: 1.1 }}
+                  whileTap={{ scale: 1 }}
+                  className="flex justify-center xl:justify-end"
+                >
+                  <SpinningText
+                    text={"Code - Create - Conquer -"}
+                    onClick={() => handleClickScroll("contact")}
+                  />
                   <span className=" -translate-x-[122px] translate-y-[72px]">
                     <ArrowDownCircle
                       size={48}
                       onClick={() => handleClickScroll("contact")}
                     />
                   </span>
-                </a>
+                </motion.a>
               </div>
             </div>
           </div>
         </div>
-      </div>
+      </motion.div>
     </section>
   );
 }
