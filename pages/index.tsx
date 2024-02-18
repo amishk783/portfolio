@@ -1,12 +1,11 @@
 import { Fragment, useEffect, useState } from "react";
-import Image from "next/image";
+
 import { motion, useScroll } from "framer-motion";
 import { Inter } from "next/font/google";
 import { Sidebar } from "@/components/Sidebar";
 import { Slider } from "@/components/Slider";
 import { Navbar } from "@/components/Navbar";
 import { ChevronLeftCircle } from "lucide-react";
-import { ToggleButton } from "@/components/UI/ToggleButton";
 
 const inter = Inter({ subsets: ["latin"] });
 
