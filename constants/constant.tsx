@@ -11,6 +11,10 @@ import { TbBrandVscode } from "react-icons/tb";
 import { FaGitAlt } from "react-icons/fa";
 import { IoLogoJavascript } from "react-icons/io5";
 import { FaGithub } from "react-icons/fa";
+import { SiTypescript } from "react-icons/si";
+import { IoLogoDocker } from "react-icons/io5";
+import { TbBrandRedux } from "react-icons/tb";
+import { DiNginx } from "react-icons/di";
 
 export interface ServiceType {
   title: string;
@@ -46,6 +50,11 @@ export const tools: { title: string; icon: IconType; color: string }[] = [
     color: "#FDFD96",
   },
   {
+    title: "TypeScript",
+    icon: SiTypescript,
+    color: "#2f74c0",
+  },
+  {
     title: "HTML/CSS",
     icon: FaHtml5,
     color: "#FF6961",
@@ -63,19 +72,25 @@ export const tools: { title: string; icon: IconType; color: string }[] = [
   },
 
   {
-    title: "ExpressJs,",
-    icon: SiExpress,
-    color: "#FFFFFF",
+    title: "Tailwindcss",
+    icon: SiTailwindcss,
+    color: "#1ebabd",
   },
+  {
+    title: "Redux",
+    icon: TbBrandRedux,
+    color: "#7248b6",
+  },
+
   {
     title: "NodeJs",
     icon: FaNodeJs,
     color: "#8fc708",
   },
   {
-    title: "Tailwindcss",
-    icon: SiTailwindcss,
-    color: "#1ebabd",
+    title: "ExpressJs,",
+    icon: SiExpress,
+    color: "#FFFFFF",
   },
   {
     title: "SQL",
@@ -101,5 +116,15 @@ export const tools: { title: string; icon: IconType; color: string }[] = [
     title: "GitHub",
     icon: FaGithub,
     color: "#000000",
+  },
+  {
+    title: "Nginx",
+    icon: DiNginx,
+    color: "#019137",
+  },
+  {
+    title: "Docker",
+    icon: IoLogoDocker,
+    color: "#FFFFFF",
   },
 ];

@@ -3,10 +3,10 @@ import { Fragment, useEffect, useState } from "react";
 import { motion, useScroll } from "framer-motion";
 import { Inter } from "next/font/google";
 import { Sidebar } from "@/components/Sidebar";
-import { Slider } from "@/components/Slider";
+import { Slider } from "@/components";
 import { Navbar } from "@/components/Navbar";
 import { ChevronLeftCircle } from "lucide-react";
-
+import { Toaster } from "react-hot-toast";
 const inter = Inter({ subsets: ["latin"] });
 
 export default function Home() {
@@ -96,6 +96,7 @@ export default function Home() {
         </div>
         {/* <Navbar /> */}
         <div className="flex"></div>
+        <Toaster />
       </motion.main>
     </Fragment>
   );

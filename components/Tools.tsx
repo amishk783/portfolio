@@ -57,7 +57,7 @@ export function Tools() {
                     <Icon
                       size={48}
                       color={tool.color}
-                      className="max-sm:w-10 hover:scale-[110%] "
+                      
                     ></Icon>
 
                     <h2 className="xl:text-2xl">{tool.title}</h2>

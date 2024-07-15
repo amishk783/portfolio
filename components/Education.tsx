@@ -38,14 +38,56 @@ export function Education() {
                 <h2 className=" pt-5 pb-7 text-lg text-green-400">
                   Niti Aayog
                 </h2>
-                <p className=" text-base leading-7">
-                  Engineered Python scripts to automate data analysis and
-                  reporting tasks, resulting in a notable increase in
-                  operational efficiency by alleviating manual efforts in daily
-                  tasks. Devised and implemented an algorithm to dynamically
-                  identify the School of the Month through dashboard reports,
-                  significantly enhancing overall operational efficiency.
-                </p>
+                <div className="flex flex-col gap-2">
+                  <p className=" text-base leading-7">
+                    <span className="font-bold">Automated Data Analysis: </span>
+                    Engineered Python scripts for automated data analysis and
+                    reporting, saving 1 hour of manual work per task and
+                    significantly increasing operational efficiency.
+                  </p>
+                  <p className=" text-base leading-7">
+                    <span className="font-bold">Algorithm Development: </span>
+                    Devised an algorithm for &rsquo;School of the Month&rsquo;;
+                    identification for ATL selection across India, reducing
+                    evaluation time by 50%.
+                  </p>
+                </div>
+              </div>
+            </div>
+            <div className="relative pl-16 pb-16 space-y-8 timeline ">
+              <div className="pt-2">
+                <span className="">Aug 2022 - Oct 2022</span>
+                <h3 className=" pt-10  pb-2 text-4xl font-light mb-1 ">
+                  WordPress and React Developer
+                </h3>
+
+                <h2 className=" pt-5 pb-7 text-lg text-green-400">
+                  Sphinx Computers
+                </h2>
+                <div className="flex flex-col gap-2">
+                  <p className=" text-base leading-7">
+                    <span className="font-bold">
+                      Enhanced Website Performance: 
+                    </span>{" "}
+                    User Interface Development: Utilized WordPress, React.js,
+                    and CSS to design and develop the user interface, boosting
+                    user engagement by 25%.
+                  </p>
+                  <p className=" text-base leading-7">
+                    <span className="font-bold">
+                      User Interface Development:
+                    </span>{" "}
+                     Utilized WordPress, React.js, and CSS to design and develop
+                    the user interface, boosting user engagement by 25%.
+                  </p>
+                  <p className=" text-base leading-7">
+                    <span className="font-bold">
+                      Customized Configurations Page:
+                    </span>{" "}
+                     Designed and implemented a personalized page for customized
+                    configurations, increasing user footfall by 30%.
+                  </p>
+                </div>
               </div>
             </div>
 

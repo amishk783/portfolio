@@ -1,26 +1,34 @@
 // Next.js API route support: https://nextjs.org/docs/api-routes/introduction
 import type { NextApiRequest, NextApiResponse } from "next";
 import { Resend } from "resend";
-
-type Data = {
-  name: string;
-};
+import PortfolioEmail from "@/components/Email/EmailTemplate";
 
 const resend = new Resend(process.env.RESEND_API_KEY);
 
 export default async function handler(
   req: NextApiRequest,
-  res: NextApiResponse<Data>
+  res: NextApiResponse
 ) {
   const formData = req.body;
+  const { name, email, message, phoneNo, subject, budget } = formData;
 
-  const { data, error } = await resend.emails.send({
-    from: "onboardding@resend.dev",
-    to: "amishkumar800@gmail.com",
-    subject: "You got an email",
-    html: "",
-  });
-  console.log(data);
 
-  res.status(200).json({ name: "John Doe" });
+  try {
+    const { data, error } = await resend.emails.send({
+      from: "Amish <amish@update.myselfhosted.cloud>",
+      to: [formData.email],
+      subject: `${name} has a message!`,
+      react: PortfolioEmail({ name, email, message, phoneNo, subject, budget }),
+    });
+
+    if (error) {
+      
+      return res.status(400).json({ error });
+    }
+
+    return res.status(200).json({ data });
+  } catch (error) {
+
+    return res.status(400).json({ error: error });
+  }
 }

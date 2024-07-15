@@ -19,7 +19,7 @@ export function Sidebar() {
           className="mt-9 object-contain w-full aspect-[1.19] border-[1px] border-solid border-[#565656] rounded-[30px] sm:max-xl:mx-auto md:max-xl:mb-5 sm:max-xl:w-[250px] "
           src="/profile.jpeg"
           alt="my-face"
-          width={200}
+          width={480}
           height={100}
         />
         <div className="self-center mt-16 text-2xl font-light leading-7 text-center text-white md:max-xl:mt-8">
@@ -61,7 +61,7 @@ export function Sidebar() {
           to="contact"
           smooth={true}
           duration={1000}
-          className="justify-center items-center py-5 pr-16 pl-20 mt-8 text-base leading-7 text-center text-black uppercase whitespace-nowrap bg-emerald-400 border-2 border-emerald-400 border-solid rounded-[30px]"
+          className="justify-center items-center py-5 pr-16 pl-20 mt-8 text-base leading-7 text-center text-black uppercase whitespace-nowrap bg-emerald-400 border-2 border-emerald-400 border-solid rounded-[30px] hover:scale-[103%]"
         >
           Hire me
         </Link>

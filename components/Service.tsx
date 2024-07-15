@@ -1,4 +1,4 @@
-import { motion } from "framer-motion";
+import { delay, motion } from "framer-motion";
 import { Inter } from "next/font/google";
 import clsx from "clsx";
 const interFont = Inter({ subsets: ["latin"] });
@@ -11,11 +11,12 @@ export function Service() {
       opacity: 1,
       transition: {
         staggerChildren: 1.1,
+        
       },
     },
   };
   const item = {
-    hidden: { opacity: 0, y: 600 },
+    hidden: { opacity: 0, y: 300 },
     show: { opacity: 1, y: 0, duration: 300 },
   };
 
@@ -27,7 +28,7 @@ export function Service() {
       <motion.div
         whileInView={{ opacity: 1, y: 100 }}
         initial={{ opacity: 0, y: 50 }}
-        transition={{ duration: 2, ease: "easeOut" }}
+        transition={{ duration: 4, ease: "easeInOut" }}
       >
         <div
           className={clsx(

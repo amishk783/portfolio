@@ -1,15 +1,13 @@
 import { motion } from "framer-motion";
 import { Inter } from "next/font/google";
 import clsx from "clsx";
-import { useState } from "react";
-import { ArrowDownCircle, Contact } from "lucide-react";
+
+import { ArrowDownCircle, ArrowDownToLine, Contact } from "lucide-react";
 import { SpinningText } from "./UI/SpiningText";
-import { Opacity } from "@mui/icons-material";
+
 const interFont = Inter({ subsets: ["latin"] });
 
 export function Hero() {
-  
-  
   const handleClickScroll = (section: string) => {
     const element = document.getElementById(section);
     if (element) {
@@ -50,27 +48,22 @@ export function Hero() {
                 Web Developer
               </span>
             </div>
-            <p className="mt-12 xl:w-[650px] mb-5 text-lg leading-7 text-neutral-400 max-md:mt-10 max-md:max-w-full animate-pulse">
+            <p className="mt-12 xl:w-[650px] mb-5 text-lg leading-7 text-neutral-400 max-md:mt-10 max-md:max-w-full ">
               An adept full-stack web developer, crafting applications and
               digital experiences tailored for both corporate giants and
               burgeoning enterprises with finesse.
             </p>
-            <div className="flex flex-col-reverse xl:flex xl:justify-between ">
-             
-              {/* <div className="gap-12 mt-10 xl:mt-2 flex items-center">
-                <div className="">
-                  <h2 className=" text-6xl text-green-400 leading-10 mb-7">
-                    10+
-                  </h2>
-                  <p className=" text-base uppercase">Years of Experience</p>
-                </div>
-                <div className="">
-                  <h2 className=" text-6xl text-green-400 leading-10 mb-7">
-                    10+
-                  </h2>
-                  <p className=" text-base uppercase">Years of Experience</p>
-                </div>
-              </div> */}
+            <div className="flex flex-row xl:flex xl:justify-between ">
+              <div className="gap-12 xl:mt-2 flex items-center">
+                <a href="/file/resume.pdf" download>
+                  <button className="group h-14 relative flex text-gray-700 items-center justify-center  bg-green-300 rounded-3xl ">
+                    <div className=" absolute border-2 -z-20 group-hover:-inset-1 rounded-[30px]  group-hover:bg-gradient-to-r group-hover:from-rose-400 blur group-hover:via-fuchsia-500 hover:to-indigo-500 animate-pulse opacity-100 transition duration-500  "></div>
+                    <p className="text-2xl py-3 px-4">Resume</p>
+                    <div className="w-1 h-full border-r-2 bg-white"></div>
+                    <ArrowDownToLine className="mx-2" size={32} />
+                  </button>
+                </a>
+              </div>
               <div className="py-10 xl:py-2">
                 <motion.a
                   whileHover={{ scale: 1.1 }}

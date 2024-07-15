@@ -4,7 +4,9 @@ import { yupResolver } from "@hookform/resolvers/yup";
 import { Inter } from "next/font/google";
 import clsx from "clsx";
 import { motion } from "framer-motion";
-import Image from "next/image";
+import { useState } from "react";
+import { Loader2 } from "lucide-react";
+import toast from "react-hot-toast";
 const interFont = Inter({ subsets: ["latin"] });
 
 type formData = {
@@ -20,7 +22,7 @@ const validationSchema = yup.object({
   name: yup.string().required("Full name is required."),
   phoneNo: yup.string().optional(),
   email: yup.string().email().required("Email is required."),
-  subject: yup.string().required("subject name is required."),
+  subject: yup.string().required("Subject name is required."),
   message: yup.string().required("Message is required"),
   budget: yup.string().optional(),
 });
@@ -34,6 +36,7 @@ export function ContactForm() {
     resolver: yupResolver(validationSchema),
     mode: "onTouched",
   });
+  const [loading, setLoading] = useState<boolean>(false);
 
   const onSubmitHandler = async (data: formData) => {
     console.log(data);
@@ -41,6 +44,7 @@ export function ContactForm() {
     const api = "api/email";
 
     try {
+      setLoading(true);
       const response = await fetch(api, {
         method: "POST",
         headers: {
@@ -49,12 +53,16 @@ export function ContactForm() {
         body: JSON.stringify(data),
       });
       if (!response.ok) {
+        setLoading(false);
         throw new Error("Network response was not ok");
       }
       const result = await response.json();
+      setLoading(false);
+      toast.success("Email sent successfully!");
       console.log(result);
     } catch (error) {
-      console.log(error);
+     toast.error("Something went wrong,Try again");
+      setLoading(false);
     }
   };
 
@@ -78,7 +86,7 @@ export function ContactForm() {
         </h1>
         <div className="mt-10 w-full text-2xl font-light leading-7 text-white max-md:mt-10 max-md:max-w-full">
           <a href="mailto:amishkumar@gmail.com" target="_blank">
-            amishkumar@gmail.com
+            amishkumar800@gmail.com
           </a>
         </div>
       </motion.div>
@@ -97,12 +105,12 @@ export function ContactForm() {
                   <div className="flex-auto text-red-500">*</div>
                 </div>
                 <input
-                  className="mt-4 text-lg text-neutral-500 border-b-white border-b-2 pb-2 bg-transparent outline-none "
+                  className="mt-4 text-lg text-neutral-500 border-b-white border-b-2 pb-2 bg-transparent outline-none focus:outline-none "
                   placeholder="Your Full Name"
                   {...register("name", { required: true })}
                 />
                 {errors.name && (
-                  <p className="text-red-500 text-base ">
+                  <p className="text-red-500 text-base mt-2">
                     {errors.name.message}
                   </p>
                 )}
@@ -111,12 +119,12 @@ export function ContactForm() {
                   phone (optional)
                 </div>
                 <input
-                  className="mt-4 text-lg text-neutral-500 border-b-white border-b-2 pb-2 bg-transparent outline-none"
+                  className="mt-4 text-lg text-neutral-500 border-b-white border-b-2 pb-2 bg-transparent outline-none focus:outline-none "
                   placeholder=" Your number phone"
                   {...register("phoneNo", { required: true })}
                 />
                 {errors.phoneNo && (
-                  <p className="text-red-500 text-base ">
+                  <p className="text-red-500 text-base mt-2">
                     {errors.phoneNo.message}
                   </p>
                 )}
@@ -125,12 +133,12 @@ export function ContactForm() {
                   your budget (optional)
                 </div>
                 <input
-                  className="mt-4 text-lg text-neutral-500 border-b-white border-b-2 pb-2 bg-transparent outline-none"
+                  className="mt-4 text-lg text-neutral-500 border-b-white border-b-2 pb-2 bg-transparent outline-none focus:outline-none "
                   placeholder="A range budget for your project"
                   {...register("budget", { required: true })}
                 />
                 {errors.budget && (
-                  <p className="text-red-500 text-base ">
+                  <p className="text-red-500 text-base mt-2">
                     {errors.budget.message}
                   </p>
                 )}
@@ -143,17 +151,17 @@ export function ContactForm() {
                   <div className="flex-auto text-red-500">*</div>
                 </div>
                 <input
-                  className="mt-4 text-lg text-neutral-500 border-b-white border-b-2 pb-2 bg-transparent outline-none"
+                  className="mt-4 text-lg text-neutral-500 border-b-white border-b-2 pb-2 bg-transparent outline-none focus:outline-none "
                   placeholder=" Your email adress"
                   {...register("email", { required: true })}
                 />
                 {errors.email && (
-                  <p className="text-red-500 text-base ">
+                  <p className="text-red-500 text-base mt-2">
                     {errors.email.message}
                   </p>
                 )}
 
-                <div className="flex gap-1.5 justify-between mt-14 uppercase max-md:mt-10">
+                <div className="flex gap-1.5 justify-between mt-12 uppercase max-md:mt-10">
                   <div className="grow text-white text-sm leading-[170%]">
                     subject
                   </div>
@@ -165,7 +173,7 @@ export function ContactForm() {
                   {...register("subject", { required: true })}
                 />
                 {errors.subject && (
-                  <p className="text-red-500 text-base ">
+                  <p className="text-red-500 text-base mt-2">
                     {errors.subject.message}
                   </p>
                 )}
@@ -184,15 +192,9 @@ export function ContactForm() {
         {errors.message && (
           <p className="text-red-500 text-base ">{errors.message.message}</p>
         )}
-        {/* <input
-          type="file"
-          className="self-start mt-12 text-xs leading-5 text-white uppercase whitespace-nowrap max-md:mt-10 max-md:ml-2 bg-transparent border-2 px-5 py-3 rounded-[20px]"
-          placeholder="add an attachment"
-          {...register("image")}
-        /> */}
 
-        <button className="justify-center self-start px-16 py-5 mt-11 text-base leading-7 text-center text-black uppercase whitespace-nowrap bg-emerald-400 border-2 border-emerald-400 border-solid rounded-[30px] max-md:px-5 max-md:mt-10">
-          send message
+        <button className="justify-center self-start flex gap-4 items-center px-16 py-5 mt-11 text-base leading-7 text-center text-black uppercase whitespace-nowrap bg-emerald-400 border-2 border-emerald-400 border-solid rounded-[30px] max-md:px-5 max-md:mt-10">
+          send message {loading && <Loader2 className="animate-spin"/>}
         </button>
       </form>
     </section>
