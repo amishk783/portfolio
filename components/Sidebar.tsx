@@ -24,7 +24,7 @@ export function Sidebar() {
         />
         <div className="self-center mt-16 text-2xl font-light leading-7 text-center text-white md:max-xl:mt-8">
           <a href="mailto:amishkumar@gmail.com" target="_blank">
-            amishkumar@gmail.com
+            amishkumar800@gmail.com
           </a>
         </div>
         <div className="mt-3.5 text-2xl font-light leading-7 text-center text-white whitespace-nowrap">
