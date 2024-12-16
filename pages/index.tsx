@@ -1,103 +1,69 @@
-import { Fragment, useEffect, useState } from "react";
+import React from "react";
 
-import { motion, useScroll } from "framer-motion";
 import { Inter } from "next/font/google";
-import { Sidebar } from "@/components/Sidebar";
-import { Slider } from "@/components";
-import { Navbar } from "@/components/Navbar";
-import { ChevronLeftCircle } from "lucide-react";
-import { Toaster } from "react-hot-toast";
-const inter = Inter({ subsets: ["latin"] });
+import { StickyScrollRevel } from "@/components/UI/StickyScrollRevel";
+import { portfolioItems } from "@/constants/constant";
 
-export default function Home() {
-  const { scrollYProgress } = useScroll();
-  const [isMenuOpen, setIsMenuOpen] = useState(false);
-  const [activeSelection, setActiveSelection] = useState("");
 
-  const menuHandler = () => {
-    setIsMenuOpen((prevState) => !prevState);
-  };
-  const handleClickScroll = (section: string) => {
-    const element = document.getElementById(section);
-    if (element) {
-      element.scrollIntoView({ behavior: "smooth" });
-      setActiveSelection(section);
-    }
-  };
+import { motion } from "framer-motion";
 
-  useEffect(() => {
-    const handleScroll = () => {
-      const sections: string[] = [
-        "hero",
-        "about",
-        "education",
-        "service",
-        "skills",
-        "portfolio",
-        "contact",
-      ];
-      const scrollPosition = window.scrollY;
-      const visibleSelection = sections.find((section) => {
-        const element = document.getElementById(section);
-        if (element) {
-          const rect = element.getBoundingClientRect();
-          return rect.top <= 100 && rect.bottom >= 100;
-        }
-        return false;
-      });
-      if (visibleSelection) {
-        setActiveSelection(visibleSelection);
-      }
-    };
-    window.addEventListener("scroll", handleScroll);
-    return () => window.removeEventListener("scroll", handleScroll);
-  }, []);
-
+const inter = Inter({ subsets: ["latin"], variable: "--font-inter" });
+const me = () => {
   return (
-    <Fragment>
-      <motion.main className="relative bg-[#0e1630] max-sm:flex-col   ">
-        <motion.div
-          style={{ scaleX: scrollYProgress }}
-          className=" bg-gradient-to-r from-rose-400 blur-sm via-fuchsia-500 to-indigo-500 opacity-100  z-50 w-full fixed top-0 left-0 animate-glowing  h-2 origin-[0%] duration-300 ease-out rounded-[30px]"
-        ></motion.div>
-        {/* Position the sidebar */}
-
-        <Sidebar />
-
-        {/* Position the hero content */}
-
-        <Slider />
-
-        {!isMenuOpen && ( //mobile menu logic
-          <motion.button
-            initial={{ opacity: 0, y: -10 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 2, ease: "easeOut" }}
-            className="md:hidden fixed  right-[-18px] top-[50%] text-green-300 animate-pulse "
-            onClick={menuHandler}
-          >
-            <ChevronLeftCircle size={52} />
-          </motion.button>
-        )}
-
-        {isMenuOpen && (
-          <Navbar
-            onClick={menuHandler}
-            toScroll={handleClickScroll}
-            activeSection={activeSelection}
-          />
-        )}
-        <div className="hidden md:block">
-          <Navbar
-            onClick={menuHandler}
-            toScroll={handleClickScroll}
-            activeSection={activeSelection}
-          />
+    <main
+      className={` w-full h-min  container font-inter-medium  ${inter.variable} `}
+    >
+      {/* hero */}
+      <section className="w-full h-min  flex flex-col gap-40   ">
+        <div className=" flex flex-col pb-20 pt-44 w-5/6  font-bold text-9xl  gap-2">
+          <div className=" flex overflow-hidden ">
+            <motion.h1
+              initial={{ translateY: 60, opacity: 0 }}
+              animate={{ translateY: 0, opacity: 1 }}
+              transition={{ duration: 0.4, ease: "easeIn" }}
+              className="  "
+            >
+              HI, I'M AMISH KUMAR
+            </motion.h1>
+          </div>
+          <div className=" flex overflow-hidden ">
+            <motion.h1
+              initial={{ translateY: 80, opacity: 0 }}
+              animate={{ translateY: 0, opacity: 1 }}
+              transition={{ duration: 0.5, ease: "easeIn" }}
+            >
+              WEB DEVELOPER
+            </motion.h1>
+          </div>
         </div>
-        {/* <Navbar /> */}
-        <div className="flex"></div>
-        <Toaster />
-      </motion.main>
-    </Fragment>
+        <div className=" w-full flex justify-between items-center border-t-4 pt-20 ">
+          <div className=" text-2xl ">
+            <p>Based in Delhi</p>
+          </div>
+          <div className="text-2xl">
+            <p>Passionate Developer Crafting Visually Captivating Websites</p>
+          </div>
+        </div>
+      </section>
+      {/* featured works */}
+      <section className="w-full h-min flex  flex-col justify-between pt-40 pb-5 border-b-4 border-white">
+        <div className="flex flex-col gap-3 sticky ">
+          <p className=" text-2xl">* PORTFOLIO</p>
+          <h2 className=" text-7xl">FEATURED WORKS </h2>
+        </div>
+
+        <div className="w-full h-min    ">
+          <StickyScrollRevel items={portfolioItems} />
+        </div>
+
+        <div className="w-full flex items-center justify-center text-xl py-10">
+          <button className=" py-4 px-8 border-2 rounded-full">
+            View ALL Projects
+          </button>
+        </div>
+      </section>
+    
+    </main>
   );
-}
+};
+export default me;

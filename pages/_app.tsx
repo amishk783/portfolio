@@ -1,3 +1,5 @@
+import { Footer } from "@/components/UI/Footer";
+import { Header } from "@/components/UI/Header";
 import "@/styles/globals.css";
 import type { AppProps } from "next/app";
 import posthog from "posthog-js";
@@ -18,7 +20,9 @@ export default function App({ Component, pageProps }: AppProps) {
   return (
     <>
       <PostHogProvider client={posthog}>
+        <Header />
         <Component {...pageProps} />
+        <Footer />
       </PostHogProvider>
     </>
   );

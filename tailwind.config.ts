@@ -1,4 +1,4 @@
-import type { Config } from 'tailwindcss'
+import type { Config } from "tailwindcss";
 
 export default {
   darkMode: ["class"],
@@ -14,10 +14,13 @@ export default {
       center: true,
       padding: "2rem",
       screens: {
-        "2xl": "1400px",
+        "2xl": "1800px",
       },
     },
     extend: {
+      fontFamily: {
+        "inter-medium": "var(--font-inter)",
+      },
       colors: {
         border: "hsl(var(--border))",
         input: "hsl(var(--input))",
@@ -52,7 +55,6 @@ export default {
           DEFAULT: "hsl(var(--card))",
           foreground: "hsl(var(--card-foreground))",
         },
- 
       },
       borderRadius: {
         lg: "var(--radius)",
@@ -118,5 +120,5 @@ export default {
       },
     },
     plugins: [],
-  }
-} satisfies Config
+  },
+} satisfies Config;

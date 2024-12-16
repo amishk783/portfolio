@@ -61,41 +61,19 @@ export function ContactForm() {
       toast.success("Email sent successfully!");
       console.log(result);
     } catch (error) {
-     toast.error("Something went wrong,Try again");
+      toast.error("Something went wrong,Try again");
       setLoading(false);
     }
   };
 
   return (
-    <section id="contact" className="pt-24 xl:pt-10 xl:mt-20 mb-20">
-      <motion.div
-        initial={{ opacity: 0, y: 100 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        transition={{ duration: 2, ease: "easeOut" }}
-      >
-        <div
-          className={clsx(
-            " max-w-[135px] px-9 py-3.5 text-sm font-light leading-4 text-white uppercase whitespace-nowrap border border-solid border-neutral-600 rounded-[30px] max-md:px-5",
-            `font-${interFont}`
-          )}
-        >
-          Contact
-        </div>
-        <h1 className="mt-16 w-full text-5xl font-light text-emerald-400 leading-[60px] max-md:mt-10 max-md:max-w-full max-md:text-3xl max-md:leading-[56px]">
-          Let&apos;s Work <span className="text-emerald-400">Together!</span>
-        </h1>
-        <div className="mt-10 w-full text-2xl font-light leading-7 text-white max-md:mt-10 max-md:max-w-full">
-          <a href="mailto:amishkumar@gmail.com" target="_blank">
-            amishkumar800@gmail.com
-          </a>
-        </div>
-      </motion.div>
+    <section id="contact" className="">
       <form
         onSubmit={handleSubmit(onSubmitHandler)}
         className="flex flex-col xl:px-5 xl:max-w-[546px]"
       >
-        <div className="mt-16 w-[92%] xl:w-full max-md:mt-5 max-md:max-w-full">
-          <div className="flex gap-5 max-md:flex-col max-md:gap-0 max-md:">
+        <div className=" w-[92%] xl:w-full max-md:mt-5 max-md:max-w-full">
+          <div className="flex gap-5 max-md:flex-col max-md:gap-0 ">
             <div className="flex flex-col w-[70%] max-md:ml-0 max-md:w-full">
               <div className="flex flex-col grow text-xs max-md:mt-10">
                 <div className="flex gap-1.5 justify-between uppercase whitespace-nowrap">
@@ -193,8 +171,8 @@ export function ContactForm() {
           <p className="text-red-500 text-base ">{errors.message.message}</p>
         )}
 
-        <button className="justify-center self-start flex gap-4 items-center px-16 py-5 mt-11 text-base leading-7 text-center text-black uppercase whitespace-nowrap bg-emerald-400 border-2 border-emerald-400 border-solid rounded-[30px] max-md:px-5 max-md:mt-10">
-          send message {loading && <Loader2 className="animate-spin"/>}
+        <button className="justify-center self-start flex gap-4 items-center px-8 py-2 mt-11 text-base leading-7 text-center text-whiteuppercase whitespace-nowrap  border-2  border-solid rounded-[30px] max-md:px-5 max-md:mt-10">
+          send message {loading && <Loader2 className="animate-spin" />}
         </button>
       </form>
     </section>

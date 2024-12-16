@@ -128,3 +128,109 @@ export const tools: { title: string; icon: IconType; color: string }[] = [
     color: "#FFFFFF",
   },
 ];
+
+export interface PortfolioType {
+  title: string;
+  description: string;
+  githubLink: string;
+  liveLink: string;
+  videoLink: string;
+}
+export const portfolioItems: PortfolioType[] = [
+  {
+    title: "Pecunia",
+    description:
+      "A finance tracking app that allows users to manage budgets, track expenses, and visualize financial data with real-time updates.",
+    githubLink: "https://github.com/yourusername/pecunia",
+    liveLink: "https://pecunia.yourdomain.com",
+    videoLink: "/video/portfolio/portfolio1.mp4",
+  },
+  {
+    title: "VideoFusion",
+    description:
+      "An interactive video platform where users can create, edit, and share video content with dynamic Framer Motion animations.",
+    githubLink: "https://github.com/yourusername/videofusion",
+    liveLink: "https://videofusion.yourdomain.com",
+    videoLink: "/video/portfolio/portfolio2.mp4",
+  },
+  {
+    title: "Kollab",
+    description:
+      "A collaborative task management tool inspired by Kanban boards, featuring real-time updates, drag-and-drop functionality, and user permissions.",
+    githubLink: "https://github.com/yourusername/kollab",
+    liveLink: "https://kollab.yourdomain.com",
+    videoLink: "/video/portfolio/portfolio3.mp4",
+  },
+];
+
+interface ProjectsType {
+  imageUrl: string;
+  title: string;
+  stack: string[];
+  githubLink: string;
+  liveLink: string;
+}
+
+export const projectLinks: ProjectsType[] = [
+  {
+    imageUrl: "/project/project1.png",
+    title: "Pecunia",
+    stack: [],
+    githubLink: "https://github.com/yourusername/videofusion",
+    liveLink: "https://videofusion.yourdomain.com",
+  },
+  {
+    imageUrl: "/project/project2.png",
+    title: "VideoFusion",
+    stack: [],
+    githubLink: "https://github.com/yourusername/kollab",
+    liveLink: "https://kollab.yourdomain.com",
+  },
+  {
+    imageUrl: "/project/project3.png",
+    title: "Kollab",
+    stack: [],
+    githubLink: "https://github.com/yourusername/kollab",
+    liveLink: "https://kollab.yourdomain.com",
+  },
+  {
+    imageUrl: "/project/project4.png",
+    title: "DigitalAgency",
+    stack: [],
+    githubLink: "https://github.com/yourusername/kollab",
+    liveLink: "https://kollab.yourdomain.com",
+  },
+];
+
+export const faqContent = [
+  {
+    question: "How do I start a project with you ?",
+    answer:
+      "First, you can reach out to me through the contact form or email. We'll schedule an initial meeting to discuss your needs and plan the project together.",
+  },
+  {
+    question: "What is the cost of your services ?",
+    answer:
+      "The cost of my projects varies depending on the type of service and project complexity. I'll provide a cost estimate after understanding your requirements.",
+  },
+  {
+    question: "How much time is typically needed to finish a project ?",
+    answer:
+      "The timeline for project completion also varies depending on its complexity. I'll establish a realistic work schedule during the project planning phase.",
+  },
+  {
+    question: "What sets you apart from your competitors?",
+    answer:
+      "I approach each project with a focus on innovative, creative, and solution-oriented design. I also prioritize client satisfaction above all and always strive to deliver the best results",
+  },
+  {
+    question: "How can I contact you to initiate a project ?",
+    answer:
+      "You can reach me through the contact form on my website or by sending an email to the address listed on the contact page.",
+  },
+  {
+    question: "Do you provide free consultations ?",
+    answer:
+      "Yes, I typically offer a free initial consultation to discuss your project and how I can assist you in achieving your design goals.",
+  },
+];
