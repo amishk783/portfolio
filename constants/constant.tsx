@@ -234,3 +234,89 @@ export const faqContent = [
       "Yes, I typically offer a free initial consultation to discuss your project and how I can assist you in achieving your design goals.",
   },
 ];
+
+export const workProcess = [
+  {
+    title: "REQUEST PROJECT",
+    description:
+      "It all starts with your project request. I listen carefully to understand what you need and your ideas. Your ideas are my inspiration, and understanding your goals is my top priority.",
+  },
+  {
+    title: "STRATEGY SESSION",
+    description:
+      "In this step, creativity takes center stage. I delve into brainstorming sessions to conceptualize your project. This is where I explore innovative solutions and artistic approaches to bring your vision to life.",
+  },
+  {
+    title: "STRATEGY SESSION",
+    description:
+      "In this step, creativity takes center stage. I delve into brainstorming sessions to conceptualize your project. This is where I explore innovative solutions and artistic approaches to bring your vision to life.",
+  },
+  {
+    title: "DESIGN & DEVELOPMENT",
+    description:
+      "With a clear concept in mind, we move to the design phase. This is where I weave together visual elements, user-friendly interfaces, and all the creative components that will make your project stand out. ",
+  },
+  {
+    title: "FEEDBACK",
+    description:
+      "Your feedback is invaluable. I present the design work to you for your input. I'm dedicated to collaboration and will make revisions as necessary to ensure the final product aligns perfectly with your artistic vision.",
+  },
+  {
+    title: " LAUNCH",
+    description:
+      "After your approval, it's time to release your project to the world. I handle all the technical details, ensuring a seamless launch. Your project is introduced to the public, where it will inspire and engage.",
+  },
+];
+
+export const excperience = [
+  {
+    date: "August 2022 - Novemeber 2023",
+    company: "Sphinx Computers",
+    role: "React Intern",
+    description:
+      "Optimized website performance by implementing lazy loading and advanced techniques, achieving a 20% reduction in page load time and enhancing user experience. Leveraged WordPress, React.js, and CSS to design intuitive user interfaces, boosting engagement by 25%. Additionally, developed a personalized page tailored to customized configurations, driving a 30% increase in user footfall.",
+  },
+  {
+    date: "August 2022 - October 2022",
+    company: "NITI Aayog",
+    role: "SDE Intern",
+    description:
+      "Engineered Python scripts to automate data analysis and reporting, saving an hour of manual work per task and significantly enhancing operational efficiency. Developed a streamlined algorithm for identifying the 'School of the Month' for ATL selection across India, reducing evaluation time by 50%",
+  },
+];
+
+export const backgroundVideoLinks = [
+  {
+    title: "Earth Lines",
+    url: "/background/video1.mp4",
+  },
+  {
+    title: "Abstract Ball",
+    url: "/background/video2.mp4",
+  },
+  {
+    title: "Wave",
+    url: "/background/video3.mp4",
+  },
+  {
+    title: "Liquids Wavy",
+    url: "/background/video4.mp4",
+  },
+
+  {
+    title: "Space Trek",
+    url: "/background/video6.mp4",
+  },
+  {
+    title: "Tunnel",
+    url: "/background/video7.mp4",
+  },
+  {
+    title: "Ghost Ball",
+    url: "/background/video9.mp4",
+  },
+  {
+    title: "None",
+    url: "",
+  },
+];

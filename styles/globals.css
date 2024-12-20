@@ -4,21 +4,27 @@
 
 :root {
   --foreground-rgb: 0, 0, 0;
+  --primary: #0e1630;
+  --primary-foreground: white;
   --background-start-rgb: 214, 219, 220;
+  --gradient-x: 0;
   --background-end-rgb: 255, 255, 255;
 }
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
+    --foreground-rgb: 0, 0, 0;
+    --primary: #0e1630;
+    --primary-foreground: white;
+    --background-start-rgb: 214, 219, 220;
+
+    --background-end-rgb: 255, 255, 255;
   }
 }
 
 body {
   color: #ffffff;
-  background: #0e1630;
+  background: var(--primary);
 }
 
 @layer utilities {
@@ -26,43 +32,25 @@ body {
     text-wrap: balance;
   }
 }
+
 @layer components {
   .custom-container {
     max-width: 1130px;
     padding: 0 15px;
     margin: auto;
   }
+
   .text {
     font-weight: 600;
     letter-spacing: 11px;
     text-transform: uppercase;
-    font-family: "Kanit", sans-serif; /* Use 'Kanit' font and fallback to sans-serif */
+    /* font-family: "Inter", sans-serif;    Use 'Kanit' font and fallback to sans-serif */
     font-size: 13px;
     fill: #fff4f4;
     /* text-shadow: 2px 0px #ccc; */
   }
 
-  .timeline::before {
-    content: "";
-    position: absolute;
-    width: 12px;
-    border-radius: 50%;
-    height: 12px;
-    background-color: antiquewhite;
-    left: -6px;
-    top: 7px;
-    transition: 0.3ms;
-  }
-  .timeline::after {
-    content: "";
-    background-color: #333333;
-    width: 1px;
-    height: 100%;
-    position: absolute;
-    left: 0;
-    top: 10px;
-    z-index: -1;
-  }
+
 
   #rotatingText {
     animation-name: rotate-circle;
@@ -71,7 +59,7 @@ body {
     animation-timing-function: linear;
     animation-iteration-count: infinite;
   }
- 
+
 
   @keyframes rotate-circle {
     to {

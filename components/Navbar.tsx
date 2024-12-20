@@ -1,5 +1,4 @@
-import { Link, animateScroll as scroll } from "react-scroll";
-import clsx from "clsx";
+
 import { Home } from "lucide-react";
 import { UserRound } from "lucide-react";
 import { SiOnlyoffice } from "react-icons/si";
@@ -8,7 +7,7 @@ import { FaCodeMerge } from "react-icons/fa6";
 import { CiMail } from "react-icons/ci";
 import { MdOutlineMiscellaneousServices } from "react-icons/md";
 import { X } from "lucide-react";
-import { Education } from "./Education";
+
 
 export function Navbar({
   onClick,

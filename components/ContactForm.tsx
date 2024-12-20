@@ -1,13 +1,12 @@
 import { useForm } from "react-hook-form";
 import * as yup from "yup";
 import { yupResolver } from "@hookform/resolvers/yup";
-import { Inter } from "next/font/google";
-import clsx from "clsx";
-import { motion } from "framer-motion";
+
+
 import { useState } from "react";
 import { Loader2 } from "lucide-react";
 import toast from "react-hot-toast";
-const interFont = Inter({ subsets: ["latin"] });
+
 
 type formData = {
   name: string;
@@ -72,18 +71,16 @@ export function ContactForm() {
         onSubmit={handleSubmit(onSubmitHandler)}
         className="flex flex-col xl:px-5 xl:max-w-[546px]"
       >
-        <div className=" w-[92%] xl:w-full max-md:mt-5 max-md:max-w-full">
+        <div className=" w-[92%] xl:w-full max-md:mt-5 max-md:max-w-full text-primary-foreground">
           <div className="flex gap-5 max-md:flex-col max-md:gap-0 ">
             <div className="flex flex-col w-[70%] max-md:ml-0 max-md:w-full">
               <div className="flex flex-col grow text-xs max-md:mt-10">
                 <div className="flex gap-1.5 justify-between uppercase whitespace-nowrap">
-                  <div className="text-white text-sm leading-[170%]">
-                    full Name
-                  </div>
+                  <div className=" text-sm leading-[170%]">full Name</div>
                   <div className="flex-auto text-red-500">*</div>
                 </div>
                 <input
-                  className="mt-4 text-lg text-neutral-500 border-b-white border-b-2 pb-2 bg-transparent outline-none focus:outline-none "
+                  className="mt-4 text-lg text-neutral-500 border-b-1 border-primary-foreground border-b-2 pb-2 bg-transparent outline-none focus:outline-none "
                   placeholder="Your Full Name"
                   {...register("name", { required: true })}
                 />
@@ -93,11 +90,11 @@ export function ContactForm() {
                   </p>
                 )}
 
-                <div className="mt-12 text-sm text-white uppercase leading-[170%] max-md:mt-10 ">
+                <div className="mt-12 text-sm  uppercase leading-[170%] max-md:mt-10 ">
                   phone (optional)
                 </div>
                 <input
-                  className="mt-4 text-lg text-neutral-500 border-b-white border-b-2 pb-2 bg-transparent outline-none focus:outline-none "
+                  className="mt-4 text-lg text-neutral-500 border-primary-foreground border-b-2 pb-2 bg-transparent outline-none focus:outline-none "
                   placeholder=" Your number phone"
                   {...register("phoneNo", { required: true })}
                 />
@@ -107,11 +104,11 @@ export function ContactForm() {
                   </p>
                 )}
 
-                <div className="mt-12 text-sm text-white uppercase leading-[170%] max-md:mt-10">
+                <div className="mt-12 text-sm  uppercase leading-[170%] max-md:mt-10">
                   your budget (optional)
                 </div>
                 <input
-                  className="mt-4 text-lg text-neutral-500 border-b-white border-b-2 pb-2 bg-transparent outline-none focus:outline-none "
+                  className="mt-4 text-lg text-neutral-500 border-primary-foreground border-b-2 pb-2 bg-transparent outline-none focus:outline-none "
                   placeholder="A range budget for your project"
                   {...register("budget", { required: true })}
                 />
@@ -125,11 +122,11 @@ export function ContactForm() {
             <div className="flex flex-col xl:ml-8 xl:pl-5 w-[70%] max-md:ml-0 max-md:w-full">
               <div className="flex flex-col text-xs max-md:mt-10">
                 <div className="flex gap-1.5 justify-between uppercase">
-                  <div className="text-white text-sm leading-[170%]">Email</div>
+                  <div className=" text-sm leading-[170%]">Email</div>
                   <div className="flex-auto text-red-500">*</div>
                 </div>
                 <input
-                  className="mt-4 text-lg text-neutral-500 border-b-white border-b-2 pb-2 bg-transparent outline-none focus:outline-none "
+                  className="mt-4 text-lg text-neutral-500 border-primary-foreground border-b-2 pb-2 bg-transparent outline-none focus:outline-none "
                   placeholder=" Your email adress"
                   {...register("email", { required: true })}
                 />
@@ -140,13 +137,11 @@ export function ContactForm() {
                 )}
 
                 <div className="flex gap-1.5 justify-between mt-12 uppercase max-md:mt-10">
-                  <div className="grow text-white text-sm leading-[170%]">
-                    subject
-                  </div>
+                  <div className="grow  text-sm leading-[170%]">subject</div>
                   <div className="text-red-500">*</div>
                 </div>
                 <input
-                  className="mt-4 text-lg text-neutral-500 border-b-white border-b-2 pb-2 bg-transparent outline-none"
+                  className="mt-4 text-lg text-neutral-500 border-primary-foreground border-b-2 pb-2 bg-transparent outline-none"
                   placeholder=" Your subject adress"
                   {...register("subject", { required: true })}
                 />
@@ -159,11 +154,11 @@ export function ContactForm() {
             </div>
           </div>
         </div>
-        <div className="mt-10 text-sm text-white uppercase leading-[170%] max-md:mt-10">
+        <div className="mt-10 text-sm  uppercase leading-[170%] max-md:mt-10">
           message
         </div>
         <textarea
-          className="mt-4 text-lg leading-8 text-white bg-transparent border-b-white border-2 pl-5 pb-10 pt-3  rounded-[20px] outline-none"
+          className="mt-4 text-lg leading-8  bg-transparent border-primary-foreground border-2 pl-5 pb-10 pt-3  rounded-[20px] outline-none"
           placeholder="Write your message here ..."
           {...register("message", { required: true })}
         ></textarea>
@@ -171,7 +166,7 @@ export function ContactForm() {
           <p className="text-red-500 text-base ">{errors.message.message}</p>
         )}
 
-        <button className="justify-center self-start flex gap-4 items-center px-8 py-2 mt-11 text-base leading-7 text-center text-whiteuppercase whitespace-nowrap  border-2  border-solid rounded-[30px] max-md:px-5 max-md:mt-10">
+        <button className="justify-center self-start flex gap-4 items-center px-8 py-2 mt-11 text-base leading-7 text-center uppercase whitespace-nowrap  border-2  border-solid rounded-[30px] max-md:px-5 max-md:mt-10">
           send message {loading && <Loader2 className="animate-spin" />}
         </button>
       </form>

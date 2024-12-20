@@ -18,7 +18,7 @@ export const ProjectCard: React.FC<Props> = ({
   liveLink,
 }) => {
   return (
-    <div className=" w-full items-center justify-center font-inter-medium">
+    <div className=" w-full items-center text-primary-foreground justify-center font-inter-medium">
       <div className="w-full h-full flex flex-col gap-4">
         <div className=" h-[425px] rounded-xl overflow-hidden">
           <Image
@@ -35,7 +35,7 @@ export const ProjectCard: React.FC<Props> = ({
             <h2 className=" text-3xl font-semibold">
               <TextReveal text={title} />
             </h2>
-            <h2 className="flex items-center text-lg gap-2 text-white">
+            <h2 className="flex items-center text-lg gap-2 ">
               View Project
               <span>
                 <ArrowRight />

@@ -60,10 +60,10 @@ export const StickyScrollRevel: React.FC<Props> = ({ items }) => {
   return (
     <div
       ref={ref}
-      className="w-full flex h-[190vh]  will-change-scroll   relative space-x-10 rounded-md  "
+      className="w-full flex h-full text-primary-foreground  lg:h-[140vh] xl:h-[190vh]  will-change-scroll   relative space-x-10 rounded-md  "
     >
-      <div className="  flex  xl:h-[400px]  top-0 w-full items-start px-4">
-        <motion.div className="max-w-2xl h-[100vh]   ">
+      <div className="  flex  xl:h-[400px]  top-0 w-full items-start lg:px-4">
+        <motion.div className="max-w-2xl lg:h-[100vh]   ">
           {items.map((item, index) => (
             <motion.div
               key={index}
@@ -71,7 +71,7 @@ export const StickyScrollRevel: React.FC<Props> = ({ items }) => {
               animate={{
                 opacity: currentCard === index ? 1 : 0.1,
               }}
-              className={`my-40 h-[400px] w-[800px]   relative  `}
+              className={` my-10 lg:my-40 h-[400px]  xl:w-[800px]   relative  `}
               style={{
                 display: "flex",
               }}
@@ -105,15 +105,15 @@ export const StickyScrollRevel: React.FC<Props> = ({ items }) => {
             src="/placeholder.png"
             width={1000}
             height={700}
-            className=" object-cover  object-right "
+            className="  object-cover  object-right "
             alt="placeholder"
           />
-          <div className=" flex w-full absolute items-center top-0 justify-center h-[67%] ">
-            <div className="absolute  p-2 w-[372px]  rounded-3xl h-[272px] bg-white">
+          <div className=" flex w-full absolute items-center top-0 justify-center h-[75%] xl:h-[67%] ">
+            <div className="absolute  p-2 lg:w-[278px] xl:w-[372px]  rounded-3xl h-[204px] xl:h-[272px] bg-white">
               {items.map((item, index) => (
                 <video
                   key={index}
-                  ref={(el) => (videoRefs.current[index] = el)} 
+                  ref={(el) => (videoRefs.current[index] = el)}
                   loop
                   muted
                   preload="auto"

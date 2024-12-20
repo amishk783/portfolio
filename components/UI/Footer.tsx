@@ -1,23 +1,26 @@
 import { Github, Linkedin, Twitter } from "lucide-react";
 import React from "react";
 import { TextReveal } from "./TextReveal";
+import Link from "next/link";
 
 export const Footer = () => {
   return (
     <>
-      <section className=" w-full flex flex-col gap-6   py-24 items-center h-min justify-center text-center">
+      <section className=" w-full flex font-inter-medium container  text-primary-foreground flex-col gap-6 border-t-4 border-primary-foreground   py-24 items-center h-min justify-center text-center relative z-50 ">
         <p className=" text-2xl">HAVE A PROJECT IN MIND ?</p>
         <TextReveal
           text="LET'S WORK TOGETHER"
-          className=" text-8xl"
+          className=" text-5xl lg:text-8xl"
         ></TextReveal>
-        <button className=" py-4 px-8 border-2 rounded-full">
+        <button className=" py-4 px-8 border-2 border-primary-foreground rounded-full">
           Get in Touch
         </button>
       </section>
-      <section className="w-full container  flex gap-6 py-10 my-20 items-center h-min justify-between text-center border-b-4 border-t-4 border-white">
-        <h5 className=" text-2xl ">AMISH KUMAR</h5>
-        <div className="flex gap-10 text-lg items-center">
+      <section className="w-full container text-primary-foreground border-primary-foreground  flex flex-col md:flex-row gap-6 py-10 my-20 items-center h-min justify-between text-center border-b-4 border-t-4  relative z-50 ">
+        <Link href="/">
+          <TextReveal className="text-2xl font-semibold" text="AMISH KUMAR" />
+        </Link>
+        <div className="flex gap-5 md:gap-10 text-lg items-center">
           <p>HOME</p>
           <p>ABOUT</p>
           <p>WORK</p>

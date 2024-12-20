@@ -13,7 +13,7 @@ interface AccordionItemProps {
     | React.ReactElement<AccordionItemChildProps>[];
   value: number;
   className?: string;
-  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+
   [key: string]: any;
 }
 
@@ -38,7 +38,6 @@ export const AccordionItem: React.FC<AccordionItemProps> = ({
     <motion.div
       onMouseEnter={handleMouseEnter}
       onMouseLeave={handleMouseLeave}
-      // onClick={onClick}
       initial={{ "--gradient-x": "0%", "--gradient-y": "0%" }}
       animate={
         displayState === "hover"

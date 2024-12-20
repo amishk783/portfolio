@@ -10,16 +10,16 @@ export const TextReveal: React.FC<Props> = ({ text, className }) => {
 
   return (
     <div
-      className={` flex items-center flex-col overflow-hidden py-1  relative  ${className} `}
+      className={` flex items-center flex-col font-inter-medium  overflow-hidden py-1  relative  ${className} `}
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={() => setIsHovered(false)}
     >
       <motion.div
         initial={{ opacity: 1, translateY: 0 }}
-        className=" w-full"
+        className=" w-full "
         animate={
           isHovered
-            ? {  opacity: 0, translateY: -100 }
+            ? { opacity: 0, translateY: -100 }
             : { opacity: 1, translateY: 0 }
         }
         transition={{ duration: 0.4, ease: "easeInOut" }}
@@ -32,7 +32,7 @@ export const TextReveal: React.FC<Props> = ({ text, className }) => {
         animate={
           isHovered
             ? { opacity: 1, translateY: 0 }
-            : {  opacity: 0, translateY: 50 }
+            : { opacity: 0, translateY: 50 }
         }
         transition={{ duration: 0.4, ease: "easeInOut" }}
         className=" absolute w-full "
@@ -42,7 +42,7 @@ export const TextReveal: React.FC<Props> = ({ text, className }) => {
           initial={{ scaleX: 0 }}
           animate={isHovered ? { scaleX: 1 } : { scaleX: 0 }}
           transition={{ duration: 0.4, ease: "easeInOut" }}
-          className="absolute h-[2px] left-0 right-0 bg-white origin-center"
+          className="absolute h-[2px] left-0 right-0  bg-primary-foreground origin-center"
         ></motion.div>
       </motion.div>
     </div>
