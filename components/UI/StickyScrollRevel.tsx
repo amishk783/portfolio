@@ -118,7 +118,7 @@ export const StickyScrollRevel: React.FC<Props> = ({ items }) => {
                   muted
                   preload="auto"
                   playsInline
-                  className={`cursor-none w-full h-full block object-cover rounded-xl object-center ${
+                  className={`cursor-none w-full h-full block object-fill  rounded-xl object-center ${
                     currentCard === index ? "block" : "hidden"
                   }`}
                   src={item.videoLink}

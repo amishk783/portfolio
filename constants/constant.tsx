@@ -141,24 +141,24 @@ export const portfolioItems: PortfolioType[] = [
     title: "Pecunia",
     description:
       "A finance tracking app that allows users to manage budgets, track expenses, and visualize financial data with real-time updates.",
-    githubLink: "https://github.com/yourusername/pecunia",
-    liveLink: "https://pecunia.yourdomain.com",
+    githubLink: "https://github.com/amisk783/pecunia",
+    liveLink: "https://app.pecunia.fyi/",
     videoLink: "/video/portfolio/portfolio1.mp4",
   },
   {
     title: "VideoFusion",
     description:
       "An interactive video platform where users can create, edit, and share video content with dynamic Framer Motion animations.",
-    githubLink: "https://github.com/yourusername/videofusion",
-    liveLink: "https://videofusion.yourdomain.com",
+    githubLink: "https://github.com/amisk783/videoFusion",
+    liveLink: "https://video-fusion.vercel.app/",
     videoLink: "/video/portfolio/portfolio2.mp4",
   },
   {
     title: "Kollab",
     description:
       "A collaborative task management tool inspired by Kanban boards, featuring real-time updates, drag-and-drop functionality, and user permissions.",
-    githubLink: "https://github.com/yourusername/kollab",
-    liveLink: "https://kollab.yourdomain.com",
+    githubLink: "https://github.com/amisk783/crewtrello",
+    liveLink: "https://crewtrello.vercel.app",
     videoLink: "/video/portfolio/portfolio3.mp4",
   },
 ];
@@ -176,29 +176,29 @@ export const projectLinks: ProjectsType[] = [
     imageUrl: "/project/project1.png",
     title: "Pecunia",
     stack: [],
-    githubLink: "https://github.com/yourusername/videofusion",
-    liveLink: "https://videofusion.yourdomain.com",
+    githubLink: "https://github.com/amisk783/pecunia",
+    liveLink: "https://app.pecunia.fyi/",
   },
   {
     imageUrl: "/project/project2.png",
     title: "VideoFusion",
     stack: [],
-    githubLink: "https://github.com/yourusername/kollab",
-    liveLink: "https://kollab.yourdomain.com",
+    githubLink: "https://github.com/amisk783/videoFusion",
+    liveLink: "https://video-fusion.vercel.app/",
   },
   {
     imageUrl: "/project/project3.png",
     title: "Kollab",
     stack: [],
-    githubLink: "https://github.com/yourusername/kollab",
-    liveLink: "https://kollab.yourdomain.com",
+    githubLink: "https://github.com/amisk783/crewtrello",
+    liveLink: "https://crewtrello.vercel.app",
   },
   {
     imageUrl: "/project/project4.png",
     title: "DigitalAgency",
     stack: [],
-    githubLink: "https://github.com/yourusername/kollab",
-    liveLink: "https://kollab.yourdomain.com",
+    githubLink: "https://github.com/amisk783/digitalagency",
+    liveLink: "digitalagency-eight.vercel.app",
   },
 ];
 
